@@ -1,4 +1,20 @@
-import node
+class Node:
+    def __init__(self,value,next_node = None):
+      self.value = value
+      self.next_node = next_node
+    
+    def get_value(self):
+        return self.value
+
+    def set_next_node(self,next_node):
+        self.next_node = next_node
+    
+    def get_next_node(self):
+        return self.next_node
+
+    def __del__(self):
+        print('Succesfully delete the Node with value={}'.format(self.value))
+
 class Queue:
   def __init__(self):
     self.head = None
@@ -7,7 +23,7 @@ class Queue:
   
   def enqueue(self, value):
 
-    item_to_add = node(value)
+    item_to_add = Node(value)
     print("Adding " + str(item_to_add.get_value()) + " to the queue!")
     if self.is_empty():
       self.head = item_to_add
